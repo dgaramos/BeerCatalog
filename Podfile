@@ -7,19 +7,9 @@ target 'BeerCatalog' do
 
   pod 'SVProgressHUD'
   pod 'Alamofire', '~> 4.7'
-  pod 'AlamofireObjectMapper', '~> 5.0'
+  pod 'ObjectMapper', '~> 3.3'
 
   # Pods for BeerCatalog
-
-  target 'BeerCatalogTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'BeerCatalogUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
 
 end
 
