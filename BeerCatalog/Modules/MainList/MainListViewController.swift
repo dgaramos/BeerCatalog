@@ -11,6 +11,7 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import SVProgressHUD
 
 final class MainListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
@@ -43,6 +44,7 @@ final class MainListViewController: UIViewController, UITableViewDelegate, UITab
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
+        SVProgressHUD.show(withStatus: "Loading beers!")
         super.viewDidLoad()
         presenter.viewDidLoad()
     }
@@ -57,8 +59,10 @@ extension MainListViewController: MainListViewInterface {
     }
     
     func setItems(beerList: [Beer]) {
+        
         list = beerList
         tableView.reloadData()
+        SVProgressHUD.dismiss()
     }
     
 }
