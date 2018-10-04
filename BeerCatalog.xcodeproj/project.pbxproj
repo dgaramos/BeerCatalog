@@ -21,7 +21,6 @@
 		4033F86E2162C7EF00B7875B /* MainListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033F8602162C7EF00B7875B /* MainListInteractor.swift */; };
 		4033F86F2162C7EF00B7875B /* MainListInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033F8612162C7EF00B7875B /* MainListInterfaces.swift */; };
 		4033F8702162C7EF00B7875B /* MainListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033F8622162C7EF00B7875B /* MainListPresenter.swift */; };
-		4033F8722162CCCE00B7875B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4033F8712162CCCD00B7875B /* Default-568h@2x.png */; };
 		4033F87B2162CD4000B7875B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4033F8782162CD4000B7875B /* Info.plist */; };
 		4033F8842162D2C400B7875B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4033F8822162D2C400B7875B /* Main.storyboard */; };
 		40B0C5E42161AA1300177F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B0C5E32161AA1300177F6B /* Assets.xcassets */; };
@@ -54,7 +53,6 @@
 		4033F8602162C7EF00B7875B /* MainListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListInteractor.swift; sourceTree = "<group>"; };
 		4033F8612162C7EF00B7875B /* MainListInterfaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListInterfaces.swift; sourceTree = "<group>"; };
 		4033F8622162C7EF00B7875B /* MainListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListPresenter.swift; sourceTree = "<group>"; };
-		4033F8712162CCCD00B7875B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4033F8782162CD4000B7875B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4033F8802162D2B500B7875B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = /Users/dgaramos/Desktop/BeerCatalog/BeerCatalog/SupportingFiles/LaunchScreen.storyboard; sourceTree = "<absolute>"; };
 		4033F8832162D2C400B7875B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 		40B0C5D02161AA1000177F6B = {
 			isa = PBXGroup;
 			children = (
-				4033F8712162CCCD00B7875B /* Default-568h@2x.png */,
 				40B0C5DB2161AA1000177F6B /* BeerCatalog */,
 				40B0C5DA2161AA1000177F6B /* Products */,
 				55D0A75721D5C0908F965B8C /* Pods */,
@@ -309,7 +306,6 @@
 				4033F8842162D2C400B7875B /* Main.storyboard in Resources */,
 				40B0C5E42161AA1300177F6B /* Assets.xcassets in Resources */,
 				4033F86D2162C7EF00B7875B /* MainList.storyboard in Resources */,
-				4033F8722162CCCE00B7875B /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +344,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BeerCatalog/Pods-BeerCatalog-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
@@ -356,6 +353,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);

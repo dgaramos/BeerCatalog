@@ -10,8 +10,10 @@ import UIKit
 
 class BeerCell: UITableViewCell {
     
+    @IBOutlet weak var beerId: UILabel?
     @IBOutlet weak var beerName: UILabel?
     @IBOutlet weak var tagLine: UILabel?
+    @IBOutlet weak var beerImage: UIImageView?
     
     override func awakeFromNib() {
         super.awakeFromNib()

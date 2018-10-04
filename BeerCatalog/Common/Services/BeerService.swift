@@ -20,7 +20,7 @@ class BeerService {
     }
     func getBeerList(completion:@escaping ([Beer]?, Int, String?) -> ()) {
     
-    let url: String = "https://api.punkapi.com/v2/beers?page=1&per_page=5"
+    let url: String = "https://api.punkapi.com/v2/beers?page=1&per_page=10"
     
     self.manager.request(url).responseJSON { response in
         if(response.response?.statusCode == 200) {

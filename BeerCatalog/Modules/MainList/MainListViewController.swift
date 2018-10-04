@@ -10,6 +10,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 
 final class MainListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
@@ -25,6 +26,11 @@ final class MainListViewController: UIViewController, UITableViewDelegate, UITab
             let beer = list[indexPath.row]
             cell.beerName?.text = beer.name
             cell.tagLine?.text = beer.tagline
+            cell.beerId?.text = String(beer.id ?? 0)
+            
+            Alamofire.request(beer.image_url ?? "https://www.brewdog.com/images/newshop/logo.png").responseImage { response in
+                cell.beerImage?.image = response.result.value
+            }
             
             return(cell)
         }
