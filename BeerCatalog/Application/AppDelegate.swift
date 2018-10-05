@@ -13,11 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    lazy var initializers: [Initializable] = [
+        ThemeInitializer()
+    ]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let initialController = UINavigationController()
-        initialController.navigationBar.isHidden = true
+        let initialController = BeerCatalogNavigationController()
         initialController.pushWireframe(MainListWireframe())
         
         self.window = UIWindow(frame: UIScreen.main.bounds)

@@ -11,6 +11,7 @@
 import UIKit
 
 enum MainListNavigationOption {
+    case details(Beer)
 }
 
 protocol MainListWireframeInterface: WireframeInterface {
@@ -22,9 +23,15 @@ protocol MainListViewInterface: ViewInterface {
     func showErrorMessage(message: String)
     
     func setItems(beerList: [Beer])
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    
+    func setViewTitle()
 }
 
 protocol MainListPresenterInterface: PresenterInterface {
+    
+    func didSelectItem(beer: Beer)
 }
 
 protocol MainListInteractorInterface: InteractorInterface {

@@ -34,5 +34,13 @@ final class MainListWireframe: BaseWireframe {
 extension MainListWireframe: MainListWireframeInterface {
 
     func navigate(to option: MainListNavigationOption) {
+        switch option{
+        case .details(let beer):
+            _openDetails(with: beer)
+        }
+    }
+    
+    func _openDetails(with beer: Beer){
+        navigationController?.pushWireframe(BeerDetailsWireframe(beer: beer))
     }
 }

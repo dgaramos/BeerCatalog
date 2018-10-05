@@ -19,8 +19,9 @@ class BeerService {
         self.manager = Alamofire.SessionManager.default
     }
     func getBeerList(completion:@escaping ([Beer]?, Int, String?) -> ()) {
-    
-    let url: String = "https://api.punkapi.com/v2/beers?page=1&per_page=10"
+        
+        let pages = "page=1&per_page=10"
+        let url: String = "\(Constants.API.URLBase)beers?\(pages)"
     
     self.manager.request(url).responseJSON { response in
         if(response.response?.statusCode == 200) {

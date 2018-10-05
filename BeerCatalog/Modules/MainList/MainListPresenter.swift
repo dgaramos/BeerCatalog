@@ -30,15 +30,20 @@ final class MainListPresenter {
 // MARK: - Extensions -
 
 extension MainListPresenter: MainListPresenterInterface {
+
+    func didSelectItem(beer: Beer) {
+        _wireframe.navigate(to: .details(beer))
+    }
+    
     
     func viewDidLoad() {
         _interactor.getBeerList { (beerList, statusCode, errorMessage) in
             if(beerList != nil){
-                print(beerList?[0].name)
                 self._view.setItems(beerList: beerList!)
             } else {
                 //self._view.showErrorMessage(message: errorMessage!)
             }
         }
+        _view.setViewTitle()
     }
 }

@@ -59,10 +59,18 @@ extension MainListViewController: MainListViewInterface {
     }
     
     func setItems(beerList: [Beer]) {
-        
         list = beerList
         tableView.reloadData()
         SVProgressHUD.dismiss()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        presenter.didSelectItem(beer: list[indexPath.row])
+    }
+    
+    func setViewTitle(){
+        navigationItem.title = "Beer Catalog"
     }
     
 }
