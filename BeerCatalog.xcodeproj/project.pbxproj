@@ -204,7 +204,6 @@
 		409C52B32166D63500CF7C24 /* BeerDetails */ = {
 			isa = PBXGroup;
 			children = (
-				409C52C02166E86000CF7C24 /* Cells */,
 				409C52B92166D68600CF7C24 /* BeerDetails.storyboard */,
 				409C52B72166D68600CF7C24 /* BeerDetailsInterfaces.swift */,
 				409C52B52166D68500CF7C24 /* BeerDetailsPresenter.swift */,
@@ -213,13 +212,6 @@
 				409C52B62166D68500CF7C24 /* BeerDetailsWireframe.swift */,
 			);
 			path = BeerDetails;
-			sourceTree = "<group>";
-		};
-		409C52C02166E86000CF7C24 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		40B0C5D02161AA1000177F6B = {

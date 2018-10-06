@@ -19,6 +19,7 @@ protocol BeerDetailsWireframeInterface: WireframeInterface {
 
 protocol BeerDetailsViewInterface: ViewInterface {
     func setViewTitle(_ title: String?)
+    func setBeer(beer: Beer?)
 }
 
 protocol BeerDetailsPresenterInterface: PresenterInterface {

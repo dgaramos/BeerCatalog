@@ -9,8 +9,28 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 final class BeerDetailsViewController: UIViewController {
+
+    
+    @IBOutlet weak var beerImage: UIImageView?
+    @IBOutlet weak var id: UILabel?
+    @IBOutlet weak var name: UILabel?
+    @IBOutlet weak var tagline: UILabel?
+    @IBOutlet weak var beerDescription: UITextView?
+    @IBOutlet weak var abv: UILabel?
+    @IBOutlet weak var ibu: UILabel?
+    @IBOutlet weak var target_fg: UILabel?
+    @IBOutlet weak var target_og: UILabel?
+    @IBOutlet weak var ebc: UILabel?
+    @IBOutlet weak var srm: UILabel?
+    @IBOutlet weak var brewer_tips: UILabel?
+    @IBOutlet weak var contributed_by: UILabel?
+    
+    
+    var beerDetails: Beer?
 
     
     // MARK: - Public properties -
@@ -22,6 +42,24 @@ final class BeerDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.viewDidLoad()
+        
+        Alamofire.request(beerDetails!.image_url ?? "https://www.brewdog.com/images/newshop/logo.png").responseImage { response in
+            self.beerImage?.image = response.result.value
+        }
+        
+        id?.text = String(beerDetails!.id ?? 0)
+        name?.text = beerDetails!.name
+        tagline?.text = beerDetails!.tagline
+        beerDescription?.text = beerDetails!.description
+        abv?.text = String(beerDetails!.abv ?? 0)
+        ibu?.text = String(beerDetails!.ibu ?? 0)
+        target_fg?.text = String(beerDetails!.target_fg ?? 0)
+        target_og?.text = String(beerDetails!.target_og ?? 0)
+        ebc?.text = String(beerDetails!.ebc ?? 0)
+        srm?.text = String(beerDetails!.srm ?? 0)
+        brewer_tips?.text = beerDetails!.brewer_tips
+        contributed_by?.text = beerDetails!.contributed_by
+        
     }
 	
 }
@@ -29,8 +67,11 @@ final class BeerDetailsViewController: UIViewController {
 // MARK: - Extensions -
 
 extension BeerDetailsViewController: BeerDetailsViewInterface {
-    
-    func setViewTitle(_ title: String?){
+    func setViewTitle(_ title: String?) {
         navigationItem.title = title
+    }
+    
+    func setBeer(beer: Beer?) {
+        beerDetails = beer
     }
 }

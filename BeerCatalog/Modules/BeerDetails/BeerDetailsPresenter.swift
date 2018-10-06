@@ -37,6 +37,8 @@ extension BeerDetailsPresenter: BeerDetailsPresenterInterface {
     
     func viewDidLoad() {
         _view.setViewTitle(_beer.name)
+        _view.setBeer(beer: _beer)
+        
     }
  
 }
