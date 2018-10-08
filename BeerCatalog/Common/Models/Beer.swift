@@ -23,6 +23,8 @@ struct Beer: Mappable{
     var target_og: Float?
     var ebc: Float?
     var srm: Float?
+    var ph: Float?
+    var attenuation_level: Float?
     var volume: Volume?
     var boil_volume: BoilVolume?
     var method: Method?
@@ -51,12 +53,14 @@ struct Beer: Mappable{
         target_og  <- map["target_og"]
         ebc  <- map["ebc"]
         srm  <- map["srm"]
+        ph  <- map["ph"]
+        attenuation_level  <- map["attenuation_level"]
         volume  <- map["volume"]
         boil_volume  <- map["boil_volume"]
         method  <- map["method"]
         ingredients  <- map["ingredients"]
         food_pairing  <- map["food_pairing"]
-        brewer_tips  <- map["brewer_tips"]
+        brewer_tips  <- map["brewers_tips"]
         contributed_by  <- map["contributed_by"]
     }
 }

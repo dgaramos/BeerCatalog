@@ -22,12 +22,12 @@ final class BeerDetailsViewController: UIViewController {
     @IBOutlet weak var beerDescription: UITextView?
     @IBOutlet weak var abv: UILabel?
     @IBOutlet weak var ibu: UILabel?
-    @IBOutlet weak var target_fg: UILabel?
-    @IBOutlet weak var target_og: UILabel?
     @IBOutlet weak var ebc: UILabel?
     @IBOutlet weak var srm: UILabel?
-    @IBOutlet weak var brewer_tips: UILabel?
-    @IBOutlet weak var contributed_by: UILabel?
+    @IBOutlet weak var ph: UILabel?
+    @IBOutlet weak var att_lvl: UILabel?
+    @IBOutlet weak var brewer_tips: UITextView?
+    @IBOutlet weak var contributed_by: UITextView?
     
     
     var beerDetails: Beer?
@@ -53,8 +53,8 @@ final class BeerDetailsViewController: UIViewController {
         beerDescription?.text = beerDetails!.description
         abv?.text = String(beerDetails!.abv ?? 0)
         ibu?.text = String(beerDetails!.ibu ?? 0)
-        target_fg?.text = String(beerDetails!.target_fg ?? 0)
-        target_og?.text = String(beerDetails!.target_og ?? 0)
+        ph?.text = String(beerDetails!.ph ?? 0)
+        att_lvl?.text = String(beerDetails!.attenuation_level ?? 0)
         ebc?.text = String(beerDetails!.ebc ?? 0)
         srm?.text = String(beerDetails!.srm ?? 0)
         brewer_tips?.text = beerDetails!.brewer_tips
