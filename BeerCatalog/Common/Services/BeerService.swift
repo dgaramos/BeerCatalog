@@ -18,21 +18,30 @@ class BeerService {
     init() {
         self.manager = Alamofire.SessionManager.default
     }
-    func getBeerList(completion:@escaping ([Beer]?, Int, String?) -> ()) {
-        
-        let pages = "page=1&per_page=10"
-        let url: String = "\(Constants.API.URLBase)beers?\(pages)"
     
-    self.manager.request(url).responseJSON { response in
-        if(response.response?.statusCode == 200) {
-            let beers:[Beer] = Mapper<Beer>().mapArray(JSONArray: response.result.value as! [[String : Any]])
+    func getBeerList(filter: BeerFilter, completion:@escaping ([Beer]?, Int, String?) -> ()) {
+        let params = ["page" : filter.index, "per_page" : filter.length] as [String : Any]
+        
+        Alamofire.request(Constants.API.beerURL, method: .get, parameters: params, encoding: URLEncoding.default).responseString {
+            response in
             
-            completion(beers, 200, nil)
+            if (response.error != nil) {
+                completion(nil, 0, response.error!.localizedDescription)
+            } else {
+                
+                if (response.response?.statusCode == 200) {
+                    let beerList = [Beer](JSONString: response.result.value!)
+                    
+                    if (beerList != nil) {
+                        completion(beerList, (response.response?.statusCode)!, nil)
+                    } else {
+                        completion(nil, (response.response?.statusCode)!, "Erro ao carregar cortesias. Tente novamente.")
+                    }
+                    
+                } else {
+                    completion(nil, (response.response?.statusCode)!, "Erro ao carregar cortesias. Tente novamente.")
+                }
+            }
         }
-        else {
-
-        }
-    }
-
     }
 }

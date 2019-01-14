@@ -31,10 +31,17 @@ protocol MainListViewInterface: ViewInterface {
 
 protocol MainListPresenterInterface: PresenterInterface {
     
+    var beerList: [Beer] {get set}
+    var filter: BeerFilter {get set}
+    
+    func addIndexToFilter()
+    
+    func loadBeers()
+    
     func didSelectItem(beer: Beer)
 }
 
 protocol MainListInteractorInterface: InteractorInterface {
     
-    func getBeerList(completion: @escaping ([Beer]?, Int, String?) -> ())
+    func getBeerList(filter: BeerFilter, completion: @escaping ([Beer]?, Int, String?) -> ())
 }

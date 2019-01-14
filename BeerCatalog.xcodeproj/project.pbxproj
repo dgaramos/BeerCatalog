@@ -23,6 +23,7 @@
 		4033F8702162C7EF00B7875B /* MainListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4033F8622162C7EF00B7875B /* MainListPresenter.swift */; };
 		4033F87B2162CD4000B7875B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4033F8782162CD4000B7875B /* Info.plist */; };
 		4033F8842162D2C400B7875B /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4033F8822162D2C400B7875B /* Splash.storyboard */; };
+		4073CCF521ECE6AA00DBF7A4 /* BeerFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4073CCF421ECE6AA00DBF7A4 /* BeerFilter.swift */; };
 		409C52BA2166D68700CF7C24 /* BeerDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C52B42166D68500CF7C24 /* BeerDetailsInteractor.swift */; };
 		409C52BB2166D68700CF7C24 /* BeerDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C52B52166D68500CF7C24 /* BeerDetailsPresenter.swift */; };
 		409C52BC2166D68700CF7C24 /* BeerDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C52B62166D68500CF7C24 /* BeerDetailsWireframe.swift */; };
@@ -65,6 +66,7 @@
 		4033F8622162C7EF00B7875B /* MainListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainListPresenter.swift; sourceTree = "<group>"; };
 		4033F8782162CD4000B7875B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4033F8832162D2C400B7875B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Splash.storyboard; sourceTree = "<group>"; };
+		4073CCF421ECE6AA00DBF7A4 /* BeerFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerFilter.swift; sourceTree = "<group>"; };
 		409C52B42166D68500CF7C24 /* BeerDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailsInteractor.swift; sourceTree = "<group>"; };
 		409C52B52166D68500CF7C24 /* BeerDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailsPresenter.swift; sourceTree = "<group>"; };
 		409C52B62166D68500CF7C24 /* BeerDetailsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailsWireframe.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				40D8FBD12164467B00ED57AE /* Ingredients.swift */,
 				40D8FBD32164469400ED57AE /* Malt.swift */,
 				40D8FBD5216446AC00ED57AE /* Hops.swift */,
+				4073CCF421ECE6AA00DBF7A4 /* BeerFilter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -382,8 +385,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-BeerCatalog/Pods-BeerCatalog-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -391,8 +397,11 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -408,6 +417,7 @@
 			files = (
 				4033F86C2162C7EF00B7875B /* MainListViewController.swift in Sources */,
 				409C52C52167001C00CF7C24 /* Initializable.swift in Sources */,
+				4073CCF521ECE6AA00DBF7A4 /* BeerFilter.swift in Sources */,
 				409C52BC2166D68700CF7C24 /* BeerDetailsWireframe.swift in Sources */,
 				4033F8632162C7EF00B7875B /* BaseWireframe.swift in Sources */,
 				4033F84D2162C7CB00B7875B /* AppDelegate.swift in Sources */,

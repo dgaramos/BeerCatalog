@@ -19,8 +19,8 @@ final class MainListInteractor {
 // MARK: - Extensions -
 
 extension MainListInteractor: MainListInteractorInterface {
-    func getBeerList(completion: @escaping ([Beer]?, Int, String?) -> ()) {
-        _beerService.getBeerList(completion: completion)
+    func getBeerList(filter: BeerFilter, completion: @escaping ([Beer]?, Int, String?) -> ()) {
+        _beerService.getBeerList(filter: filter, completion: completion)
     }
     
     

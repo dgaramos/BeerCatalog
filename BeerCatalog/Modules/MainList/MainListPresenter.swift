@@ -17,6 +17,9 @@ final class MainListPresenter {
     private unowned var _view: MainListViewInterface
     private var _interactor: MainListInteractorInterface
     private var _wireframe: MainListWireframeInterface
+    
+    var filter = BeerFilter(index: 1, length: 30)
+    var beerList = [] as [Beer]
 
     // MARK: - Lifecycle -
 
@@ -35,15 +38,26 @@ extension MainListPresenter: MainListPresenterInterface {
         _wireframe.navigate(to: .details(beer))
     }
     
+    func addIndexToFilter() {
+        filter.index! += 1
+        if(filter.length! <= beerList.count) {
+           loadBeers()
+        }
+    }
     
-    func viewDidLoad() {
-        _interactor.getBeerList { (beerList, statusCode, errorMessage) in
+    func loadBeers() {
+        _interactor.getBeerList(filter: filter) { (beerList, statusCode, errorMessage) in
             if(beerList != nil){
+                self.beerList = beerList!
                 self._view.setItems(beerList: beerList!)
             } else {
                 //self._view.showErrorMessage(message: errorMessage!)
             }
         }
+    }
+    
+    func viewDidLoad() {
+        loadBeers()
         _view.setViewTitle()
     }
 }

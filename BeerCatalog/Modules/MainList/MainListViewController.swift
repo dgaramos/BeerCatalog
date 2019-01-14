@@ -12,6 +12,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import SVProgressHUD
+import UIScrollView_InfiniteScroll
 
 final class MainListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
@@ -47,6 +48,11 @@ final class MainListViewController: UIViewController, UITableViewDelegate, UITab
         SVProgressHUD.show(withStatus: "Loading beers!")
         super.viewDidLoad()
         presenter.viewDidLoad()
+        
+        tableView.addInfiniteScroll { (tableView) -> Void in
+            self.presenter.addIndexToFilter()
+            tableView.finishInfiniteScroll()
+        }
     }
 	
 }
@@ -59,7 +65,7 @@ extension MainListViewController: MainListViewInterface {
     }
     
     func setItems(beerList: [Beer]) {
-        list = beerList
+        list += beerList
         tableView.reloadData()
         SVProgressHUD.dismiss()
     }

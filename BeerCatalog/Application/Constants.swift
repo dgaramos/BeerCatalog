@@ -12,6 +12,7 @@ struct Constants {
     
     struct API {
         static let URLBase = "https://api.punkapi.com/v2/"
+        static let beerURL = URLBase + "beers"
     }
     
 }
