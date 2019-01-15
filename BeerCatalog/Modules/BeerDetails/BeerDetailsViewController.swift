@@ -43,6 +43,7 @@ final class BeerDetailsViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDidLoad()
         
+        self.beerImage?.image = nil
         self.beerImage?.loadGif(name: "image-loader")
         Alamofire.request(beerDetails!.image_url ?? "https://www.brewdog.com/images/newshop/logo.png").responseImage { response in
             self.beerImage?.image = response.result.value
