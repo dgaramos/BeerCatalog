@@ -51,7 +51,7 @@ extension MainListPresenter: MainListPresenterInterface {
                 self.beerList = beerList!
                 self._view.setItems(beerList: beerList!)
             } else {
-                //self._view.showErrorMessage(message: errorMessage!)
+                self._view.showErrorMessage(message: errorMessage!)
             }
         }
     }

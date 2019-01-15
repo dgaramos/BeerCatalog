@@ -12,6 +12,7 @@ target 'BeerCatalog' do
   pod 'ObjectMapper', '~> 3.3'
   pod 'IQKeyboardManagerSwift', '6.0.4'
   pod 'UIScrollView-InfiniteScroll', '~> 1.1.0'
+  pod 'SwiftGifOrigin', '~> 1.6.1'
 
   # Pods for BeerCatalog
 

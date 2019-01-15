@@ -13,13 +13,14 @@ import Alamofire
 import AlamofireImage
 import SVProgressHUD
 import UIScrollView_InfiniteScroll
+import SwiftGifOrigin
 
 final class MainListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
     var list: [Beer] = []
     @IBOutlet weak var tableView: UITableView!
     
-        public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return(list.count)
         }
         
@@ -29,12 +30,12 @@ final class MainListViewController: UIViewController, UITableViewDelegate, UITab
             cell.beerName?.text = beer.name
             cell.tagLine?.text = beer.tagline
             cell.beerId?.text = String(beer.id ?? 0)
-            
+            cell.beerImage?.loadGif(name: "image-loader")
             Alamofire.request(beer.image_url ?? "https://www.brewdog.com/images/newshop/logo.png").responseImage { response in
                 cell.beerImage?.image = response.result.value
             }
-            
-            return(cell)
+//            
+            return cell
         }
     
 
@@ -51,7 +52,6 @@ final class MainListViewController: UIViewController, UITableViewDelegate, UITab
         
         tableView.addInfiniteScroll { (tableView) -> Void in
             self.presenter.addIndexToFilter()
-            tableView.finishInfiniteScroll()
         }
     }
 	
@@ -67,6 +67,9 @@ extension MainListViewController: MainListViewInterface {
     func setItems(beerList: [Beer]) {
         list += beerList
         tableView.reloadData()
+        if (presenter.beerList.count >= presenter.filter.length!) {
+            tableView.finishInfiniteScroll()
+        }
         SVProgressHUD.dismiss()
     }
     
@@ -75,7 +78,7 @@ extension MainListViewController: MainListViewInterface {
         presenter.didSelectItem(beer: list[indexPath.row])
     }
     
-    func setViewTitle(){
+    func setViewTitle() {
         navigationItem.title = "Beer Catalog"
     }
     

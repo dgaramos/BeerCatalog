@@ -24,6 +24,10 @@
 		4033F87B2162CD4000B7875B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4033F8782162CD4000B7875B /* Info.plist */; };
 		4033F8842162D2C400B7875B /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4033F8822162D2C400B7875B /* Splash.storyboard */; };
 		4073CCF521ECE6AA00DBF7A4 /* BeerFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4073CCF421ECE6AA00DBF7A4 /* BeerFilter.swift */; };
+		4073CCF721ED62B400DBF7A4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4073CCF621ED62B400DBF7A4 /* Extensions.swift */; };
+		4073CCFA21ED663000DBF7A4 /* image-loader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4073CCF921ED663000DBF7A4 /* image-loader.gif */; };
+		4073CCFD21ED69D000DBF7A4 /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4073CCFC21ED69D000DBF7A4 /* SelfSizedTableView.swift */; };
+		4073CCFF21ED78EF00DBF7A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4073CCFE21ED78EF00DBF7A4 /* Assets.xcassets */; };
 		409C52BA2166D68700CF7C24 /* BeerDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C52B42166D68500CF7C24 /* BeerDetailsInteractor.swift */; };
 		409C52BB2166D68700CF7C24 /* BeerDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C52B52166D68500CF7C24 /* BeerDetailsPresenter.swift */; };
 		409C52BC2166D68700CF7C24 /* BeerDetailsWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C52B62166D68500CF7C24 /* BeerDetailsWireframe.swift */; };
@@ -34,7 +38,6 @@
 		409C52C52167001C00CF7C24 /* Initializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C52C42167001C00CF7C24 /* Initializable.swift */; };
 		409C52C8216700B800CF7C24 /* BeerCatalogNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C52C7216700B800CF7C24 /* BeerCatalogNavigationController.swift */; };
 		409C52CA2167015E00CF7C24 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409C52C92167015E00CF7C24 /* Constants.swift */; };
-		40B0C5E42161AA1300177F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B0C5E32161AA1300177F6B /* Assets.xcassets */; };
 		40D8FBC22164362800ED57AE /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D8FBC12164362800ED57AE /* Beer.swift */; };
 		40D8FBC6216445B900ED57AE /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D8FBC5216445B900ED57AE /* Volume.swift */; };
 		40D8FBC8216445EC00ED57AE /* BoilVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D8FBC7216445EC00ED57AE /* BoilVolume.swift */; };
@@ -67,6 +70,10 @@
 		4033F8782162CD4000B7875B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4033F8832162D2C400B7875B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Splash.storyboard; sourceTree = "<group>"; };
 		4073CCF421ECE6AA00DBF7A4 /* BeerFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerFilter.swift; sourceTree = "<group>"; };
+		4073CCF621ED62B400DBF7A4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4073CCF921ED663000DBF7A4 /* image-loader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "image-loader.gif"; sourceTree = "<group>"; };
+		4073CCFC21ED69D000DBF7A4 /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
+		4073CCFE21ED78EF00DBF7A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		409C52B42166D68500CF7C24 /* BeerDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailsInteractor.swift; sourceTree = "<group>"; };
 		409C52B52166D68500CF7C24 /* BeerDetailsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailsPresenter.swift; sourceTree = "<group>"; };
 		409C52B62166D68500CF7C24 /* BeerDetailsWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeerDetailsWireframe.swift; sourceTree = "<group>"; };
@@ -78,7 +85,6 @@
 		409C52C7216700B800CF7C24 /* BeerCatalogNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCatalogNavigationController.swift; sourceTree = "<group>"; };
 		409C52C92167015E00CF7C24 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		40B0C5D92161AA1000177F6B /* BeerCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		40B0C5E32161AA1300177F6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40D8FBC12164362800ED57AE /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		40D8FBC5216445B900ED57AE /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		40D8FBC7216445EC00ED57AE /* BoilVolume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoilVolume.swift; sourceTree = "<group>"; };
@@ -144,6 +150,8 @@
 		4033F84E2162C7EF00B7875B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4073CCFB21ED69BD00DBF7A4 /* Helpers */,
+				4073CCF821ED65FD00DBF7A4 /* Gif */,
 				40D8FBC02164360400ED57AE /* Models */,
 				400561E32162F96900CD0BF5 /* Services */,
 				4033F84F2162C7EF00B7875B /* VIPER */,
@@ -203,6 +211,23 @@
 			path = Base.lproj;
 			sourceTree = "<group>";
 		};
+		4073CCF821ED65FD00DBF7A4 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				4073CCF921ED663000DBF7A4 /* image-loader.gif */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
+		4073CCFB21ED69BD00DBF7A4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4073CCF621ED62B400DBF7A4 /* Extensions.swift */,
+				4073CCFC21ED69D000DBF7A4 /* SelfSizedTableView.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		409C52B32166D63500CF7C24 /* BeerDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,11 +262,11 @@
 		40B0C5DB2161AA1000177F6B /* BeerCatalog */ = {
 			isa = PBXGroup;
 			children = (
+				4073CCFE21ED78EF00DBF7A4 /* Assets.xcassets */,
 				4033F84A2162C7CB00B7875B /* Application */,
 				4033F8732162CD4000B7875B /* SupportingFiles */,
 				4033F84E2162C7EF00B7875B /* Common */,
 				4033F85B2162C7EF00B7875B /* Modules */,
-				40B0C5E32161AA1300177F6B /* Assets.xcassets */,
 			);
 			path = BeerCatalog;
 			sourceTree = "<group>";
@@ -341,10 +366,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4073CCFA21ED663000DBF7A4 /* image-loader.gif in Resources */,
 				4033F87B2162CD4000B7875B /* Info.plist in Resources */,
 				4033F8842162D2C400B7875B /* Splash.storyboard in Resources */,
-				40B0C5E42161AA1300177F6B /* Assets.xcassets in Resources */,
 				4033F86D2162C7EF00B7875B /* MainList.storyboard in Resources */,
+				4073CCFF21ED78EF00DBF7A4 /* Assets.xcassets in Resources */,
 				409C52BF2166D68700CF7C24 /* BeerDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +415,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
 				"${BUILT_PRODUCTS_DIR}/UIScrollView-InfiniteScroll/UIScrollView_InfiniteScroll.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -401,6 +428,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIScrollView_InfiniteScroll.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +461,7 @@
 				40D8FBC22164362800ED57AE /* Beer.swift in Sources */,
 				40D8FBCA2164460A00ED57AE /* Method.swift in Sources */,
 				409C52C8216700B800CF7C24 /* BeerCatalogNavigationController.swift in Sources */,
+				4073CCFD21ED69D000DBF7A4 /* SelfSizedTableView.swift in Sources */,
 				409C52BD2166D68700CF7C24 /* BeerDetailsInterfaces.swift in Sources */,
 				409C52C32166FFEA00CF7C24 /* ThemeInitializer.swift in Sources */,
 				40D8FBC8216445EC00ED57AE /* BoilVolume.swift in Sources */,
@@ -446,6 +475,7 @@
 				4033F8662162C7EF00B7875B /* ViewInterface.swift in Sources */,
 				40D8FBCC2164462600ED57AE /* MashTemp.swift in Sources */,
 				4033F8652162C7EF00B7875B /* PresenterInterface.swift in Sources */,
+				4073CCF721ED62B400DBF7A4 /* Extensions.swift in Sources */,
 				40D8FBCE2164464500ED57AE /* Temperature.swift in Sources */,
 				40D8FBC6216445B900ED57AE /* Volume.swift in Sources */,
 			);

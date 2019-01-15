@@ -43,6 +43,7 @@ final class BeerDetailsViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDidLoad()
         
+        self.beerImage?.loadGif(name: "image-loader")
         Alamofire.request(beerDetails!.image_url ?? "https://www.brewdog.com/images/newshop/logo.png").responseImage { response in
             self.beerImage?.image = response.result.value
         }
@@ -51,6 +52,7 @@ final class BeerDetailsViewController: UIViewController {
         name?.text = beerDetails!.name
         tagline?.text = beerDetails!.tagline
         beerDescription?.text = beerDetails!.description
+        //adjustUITextViewHeight(arg: beerDescription!)
         abv?.text = String(beerDetails!.abv ?? 0)
         ibu?.text = String(beerDetails!.ibu ?? 0)
         ph?.text = String(beerDetails!.ph ?? 0)
@@ -58,10 +60,16 @@ final class BeerDetailsViewController: UIViewController {
         ebc?.text = String(beerDetails!.ebc ?? 0)
         srm?.text = String(beerDetails!.srm ?? 0)
         brewer_tips?.text = beerDetails!.brewer_tips
+        //adjustUITextViewHeight(arg: brewer_tips!)
         contributed_by?.text = beerDetails!.contributed_by
-        
     }
 	
+    func adjustUITextViewHeight(arg : UITextView) {
+        arg.translatesAutoresizingMaskIntoConstraints = true
+        arg.sizeToFit()
+        arg.isScrollEnabled = false
+    }
+
 }
 
 // MARK: - Extensions -

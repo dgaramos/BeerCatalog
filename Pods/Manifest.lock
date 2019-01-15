@@ -7,6 +7,7 @@ PODS:
   - IQKeyboardManagerSwift (6.0.4)
   - ObjectMapper (3.3.0)
   - SVProgressHUD (2.2.5)
+  - SwiftGifOrigin (1.6.1)
   - UIScrollView-InfiniteScroll (1.1.0)
 
 DEPENDENCIES:
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 6.0.4)
   - ObjectMapper (~> 3.3)
   - SVProgressHUD
+  - SwiftGifOrigin (~> 1.6.1)
   - UIScrollView-InfiniteScroll (~> 1.1.0)
 
 SPEC REPOS:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - ObjectMapper
     - SVProgressHUD
+    - SwiftGifOrigin
     - UIScrollView-InfiniteScroll
 
 SPEC CHECKSUMS:
@@ -35,8 +38,9 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   UIScrollView-InfiniteScroll: 3ef456bcbe759c19f510a383cff96e6647c98c98
 
-PODFILE CHECKSUM: 0ac30a6d3d742b73b7ea4a3b461f83ec27f0a9d6
+PODFILE CHECKSUM: efcb9fc6d6fc4febf21042b2af4006ac7422fef6
 
 COCOAPODS: 1.5.3
