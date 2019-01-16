@@ -17,7 +17,6 @@ final class BeerDetailsViewController: UIViewController {
     
     @IBOutlet weak var beerImage: UIImageView?
     @IBOutlet weak var id: UILabel?
-    @IBOutlet weak var name: UILabel?
     @IBOutlet weak var tagline: UILabel?
     @IBOutlet weak var beerDescription: UITextView?
     @IBOutlet weak var abv: UILabel?
@@ -50,10 +49,8 @@ final class BeerDetailsViewController: UIViewController {
         }
         
         id?.text = String(beerDetails!.id ?? 0)
-        name?.text = beerDetails!.name
         tagline?.text = beerDetails!.tagline
         beerDescription?.text = beerDetails!.description
-        //adjustUITextViewHeight(arg: beerDescription!)
         abv?.text = String(beerDetails!.abv ?? 0)
         ibu?.text = String(beerDetails!.ibu ?? 0)
         ph?.text = String(beerDetails!.ph ?? 0)
@@ -61,16 +58,9 @@ final class BeerDetailsViewController: UIViewController {
         ebc?.text = String(beerDetails!.ebc ?? 0)
         srm?.text = String(beerDetails!.srm ?? 0)
         brewer_tips?.text = beerDetails!.brewer_tips
-        //adjustUITextViewHeight(arg: brewer_tips!)
         contributed_by?.text = beerDetails!.contributed_by
+        
     }
-	
-    func adjustUITextViewHeight(arg : UITextView) {
-        arg.translatesAutoresizingMaskIntoConstraints = true
-        arg.sizeToFit()
-        arg.isScrollEnabled = false
-    }
-
 }
 
 // MARK: - Extensions -
