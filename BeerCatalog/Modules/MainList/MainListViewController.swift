@@ -19,25 +19,42 @@ final class MainListViewController: UIViewController, UITableViewDelegate, UITab
         
     var list: [Beer] = []
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var filtersView: UIView!
+    @IBOutlet weak var beerNameFilter: UITextField!
     
-        public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return(list.count)
-        }
-        
-        public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BeerCell
-            let beer = list[indexPath.row]
-            cell.beerName?.text = beer.name
-            cell.tagLine?.text = beer.tagline
-            cell.beerId?.text = String(beer.id ?? 0)
-            cell.beerImage?.loadGif(name: "image-loader")
-            Alamofire.request(beer.image_url ?? "https://www.brewdog.com/images/newshop/logo.png").responseImage { response in
-                cell.beerImage?.image = response.result.value
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return(list.count)
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! BeerCell
+        let beer = list[indexPath.row]
+        cell.beerName?.text = beer.name
+        cell.tagLine?.text = beer.tagline
+        cell.beerId?.text = String(beer.id ?? 0)
+        cell.beerImage?.loadGif(name: "image-loader")
+        Alamofire.request(beer.image_url ?? "https://www.brewdog.com/images/newshop/logo.png").responseImage { response in
+            cell.beerImage?.image = response.result.value
+        }           
+        return cell
+    }
+    
+    @IBAction func showHideFilters(_sender: Any) {
+        if (self.filtersView.isHidden) {
+            UIView.animate(withDuration: 0.3) {
+                self.view.endEditing(true)
+                self.filtersView.isHidden = false
             }
-//            
-            return cell
+        } else {
+            UIView.animate(withDuration: 0.3) {
+                self.view.endEditing(true)
+                 SVProgressHUD.show(withStatus: "Searching beers!")
+                self.presenter.addNameToFilter(name: (self.beerNameFilter.text?.formatFilter())!)
+                self.filtersView.isHidden = true
+            }
         }
-    
+    }
+
 
     // MARK: - Public properties -
 
@@ -53,6 +70,8 @@ final class MainListViewController: UIViewController, UITableViewDelegate, UITab
         tableView.addInfiniteScroll { (tableView) -> Void in
             self.presenter.addIndexToFilter()
         }
+        
+        tableView.finishInfiniteScroll()
     }
 	
 }
@@ -64,12 +83,13 @@ extension MainListViewController: MainListViewInterface {
         
     }
     
-    func setItems(beerList: [Beer]) {
-        list += beerList
-        tableView.reloadData()
-        if (presenter.beerList.count >= presenter.filter.length!) {
-            tableView.finishInfiniteScroll()
+    func setItems(index: Int, beerList: [Beer]) {
+        if (index == 1) {
+            list = beerList
+        } else {
+            list += beerList
         }
+        tableView.reloadData()
         SVProgressHUD.dismiss()
     }
     

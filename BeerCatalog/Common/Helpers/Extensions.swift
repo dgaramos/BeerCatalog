@@ -119,6 +119,19 @@ extension String {
         return formatedName
     }
     
+    func formatFilter() -> String {
+        let filterArray = self.split(separator: " ")
+        var formatedFilter = ""
+        for filter in filterArray {
+            if (filter == filterArray.last) {
+                formatedFilter += filter.lowercased()
+            } else if (filter != "") {
+                formatedFilter += filter.lowercased() + "_"
+            }
+        }
+        return formatedFilter
+    }
+    
     func isProperName() -> Bool {
         if (self.matches("^[A-zÀ-ú ]*$")) {
             let nameArray = self.split(separator: " ")

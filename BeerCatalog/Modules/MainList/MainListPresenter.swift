@@ -40,16 +40,27 @@ extension MainListPresenter: MainListPresenterInterface {
     
     func addIndexToFilter() {
         filter.index! += 1
-        if(filter.length! <= beerList.count) {
+        if(filter.length! >= beerList.count) {
            loadBeers()
         }
+    }
+    
+    func addNameToFilter(name: String) {
+        if (name != "") {
+            filter.beer_name = name
+        } else {
+            filter.beer_name = nil
+        }
+        filter.index! = 1
+        
+        loadBeers()
     }
     
     func loadBeers() {
         _interactor.getBeerList(filter: filter) { (beerList, statusCode, errorMessage) in
             if(beerList != nil){
                 self.beerList = beerList!
-                self._view.setItems(beerList: beerList!)
+                self._view.setItems(index: self.filter.index!, beerList: beerList!)
             } else {
                 self._view.showErrorMessage(message: errorMessage!)
             }

@@ -20,7 +20,11 @@ class BeerService {
     }
     
     func getBeerList(filter: BeerFilter, completion:@escaping ([Beer]?, Int, String?) -> ()) {
-        let params = ["page" : filter.index, "per_page" : filter.length] as [String : Any]
+        var params = ["page" : filter.index, "per_page" : filter.length] as [String : Any]
+        
+        if (filter.beer_name != nil && filter.beer_name != "") {
+            params["beer_name"] = filter.beer_name
+        }
         
         Alamofire.request(Constants.API.beerURL, method: .get, parameters: params, encoding: URLEncoding.default).responseString {
             response in

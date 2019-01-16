@@ -13,6 +13,7 @@ import ObjectMapper
 struct BeerFilter: Mappable{
     var index: Int?
     var length: Int?
+    var beer_name: String?
     
     init?(map: Map) {
         
@@ -26,5 +27,6 @@ struct BeerFilter: Mappable{
     mutating func mapping(map: Map) {
         index <- map ["index"]
         length <- map["length"]
+        beer_name <- map["beer_name"]
     }
 }

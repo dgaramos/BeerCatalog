@@ -22,7 +22,7 @@ protocol MainListViewInterface: ViewInterface {
     
     func showErrorMessage(message: String)
     
-    func setItems(beerList: [Beer])
+    func setItems(index: Int, beerList: [Beer])
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     
@@ -35,6 +35,8 @@ protocol MainListPresenterInterface: PresenterInterface {
     var filter: BeerFilter {get set}
     
     func addIndexToFilter()
+    
+    func addNameToFilter(name: String)
     
     func loadBeers()
     
